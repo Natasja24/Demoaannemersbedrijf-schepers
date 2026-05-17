@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aannemersbedrijf Schepers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+      url('foto\ 01\ .jpeg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 8%;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #f5a623;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f5a623;
+    }
+
+    .hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #e6e6e6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #f5a623;
+      color: #ff8c00;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffbe4d;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #ff8c00;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: #1b1b1b;
+      padding: 35px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .service-card h3 {
+      margin-bottom: 15px;
+      color: #f5a623;
+      font-size: 1.4rem;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .about-text h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .project img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .project img:hover {
+      transform: scale(1.08);
+    }
+
+    .contact {
+      background: #000;
+      color: white;
+      text-align: center;
+      border-radius: 20px;
+      padding: 60px 30px;
+    }
+
+    .contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      margin-bottom: 25px;
+      color: #ddd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #050505;
+      color: #aaa;
+      margin-top: 50px;
+    }
+
+    @media(max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .hero h1 {
+        font-size: 2.7rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Aannemersbedrijf Schepers </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="diensten.html">Diensten</a></li>
+        <li><a href="about.html">Over Ons</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Vakmanschap in Verbouw, Nieuwbouw & Houtbewerking</h1>
+        <p>
+          Wij realiseren hoogwaardige bouwprojecten met oog voor detail, kwaliteit en betrouwbaarheid. Van complete nieuwbouw tot maatwerk houtbewerking.
+
+        </p>
+        <a href="contact.html" class="btn">Vraag een offerte aan</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="diensten">
+    <div class="section-title">
+      <h2>Onze Diensten</h2>
+      <p>Alles onder één dak voor uw bouwproject.</p>
+    </div>
+
+    <div class="services">
+      <div class="service-card">
+        <h3>Verbouw</h3>
+        <p>
+          Van renovaties tot complete verbouwingen van woningen . Wij zorgen voor een moderne en duurzame afwerking. en een zorgeloze uitvoering.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Nieuwbouw</h3>
+        <p>
+          Wij bouwen woningen en projecten vanaf de fundering tot de oplevering met een sterke focus op kwaliteit en planning.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Houtbewerking</h3>
+        <p>
+          Maatwerk houtoplossingen zoals kozijnen, meubels, overkappingen en interieurafwerking met echt vakmanschap.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="over">
+    <div class="about">
+      <img src="200acb94-aff8-4cec-ab83-ffbc32f5690e.JPG" alt="Erwin en Martin Schepers">
+
+      <div class="about-text">
+        <h2>Over Ons</h2>
+        <p>
+         Wij zijn gespecialiseerd is verbouw, nieuwbouw. En ruime voorraad in bouw materiaal en materieel. 
+         machinale houtbewerkingen en handmatige houtbewerkingen.
+         Wij zijn een familiebedrijf met jarenlange ervaring in de bouwsector.
+         Onze passie voor bouwen en vakmanschap drijft ons om elk project tot een succes te maken. We geloven in een persoonlijke aanpak waarbij we nauw samenwerken met onze klanten om hun visie werkelijkheid.
+
+        </p>
+        <p>
+          Door onze ervaring en persoonlijke aanpak denken wij mee vanaf het eerste idee tot de uiteindelijke oplevering. 
+        </p>
+        <a href="about.html" class="btn">Lees meer over ons</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="video">
+    <div class="section-title">
+      <h2>Bekijk Ons Werk</h2>
+      <p>Een korte video van onze werkzaamheden en projecten.</p>
+    </div>
+
+    <div style="max-width: 1000px; margin: auto; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+      <video controls autoplay muted loop style="width:100%; display:block;">
+        <source src="Aannmersbedrijf schepers.mp4" type="video/mp4">
+        Uw browser ondersteunt geen video.
+      </video>
+    </div>
+  </section>
+
+  <section id="projecten">
+    <div class="section-title">
+      <h2>Recente Projecten</h2>
+      <p>Een indruk van onze werkzaamheden.</p>
+    </div>
+
+    <div class="projects">
+      <div class="project">
+        <img src="foto03.jpeg " alt="Renovatie ">
+      </div>
+
+      <div class="project">
+        <img src="605711903_1323570742907050_1479144414432628928_n.jpeg" alt="Nieuwbouw ">
+      </div>
+
+      <div class="project">
+        <img src="482807187_1098098522120941_6373366562681311136_n.jpeg" alt="boedrij schuur maken ">
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <h2>Klaar om te bouwen?</h2>
+      <p>
+        Neem vandaag nog contact met ons op voor een vrijblijvend gesprek of offerte.
+      </p>
+      <a href="mailto:info@bouwbedrijf.nl" class="btn">Contact opnemen</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Aannemersbedrijf schepers - Alle rechten voorbehouden.</p>
+  </footer>
+
+  <script>
+    // Smooth scroll effect
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Navbar background on scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if(window.scrollY > 50){
+        nav.style.background = '#000';
+        nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.4)';
+      } else {
+        nav.style.background = 'transparent';
+        nav.style.boxShadow = 'none';
+      }
+    });
+
+    // Fade in animation
+    const cards = document.querySelectorAll('.service-card, .project, .about-text');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0px)';
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(40px)';
+      card.style.transition = 'all 0.8s ease';
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>

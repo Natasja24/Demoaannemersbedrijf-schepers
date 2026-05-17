@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diensten - Bouwbedrijf</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Montserrat',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#0a0a0a;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      min-height:80vh;
+      background:linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+      url('foto05.jpeg');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:40px;
+      position:relative;
+    }
+
+    nav{
+      position:absolute;
+      top:0;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:30px 8%;
+      z-index:100;
+      transition:0.4s;
+    }
+
+    .logo{
+      font-size:2rem;
+      font-weight:800;
+      color:#ff8800;
+      letter-spacing:2px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:white;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#ff8800;
+    }
+
+    .hero h1{
+      font-size:5rem;
+      margin-bottom:20px;
+      text-transform:uppercase;
+      line-height:1.1;
+    }
+
+    .hero h1 span{
+      color:#ff8800;
+    }
+
+    .hero p{
+      max-width:800px;
+      color:#d6d6d6;
+      line-height:1.8;
+      font-size:1.15rem;
+    }
+
+    .services-section{
+      padding:120px 8%;
+      position:relative;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:80px;
+    }
+
+    .section-title h2{
+      font-size:3.5rem;
+      color:#ff8800;
+      margin-bottom:20px;
+    }
+
+    .section-title p{
+      color:#bbb;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+      gap:40px;
+    }
+
+    .service-box{
+      position:relative;
+      height:500px;
+      overflow:hidden;
+      border-radius:25px;
+      cursor:pointer;
+      transition:0.5s;
+      background:#141414;
+      border:1px solid rgba(255,136,0,0.1);
+    }
+
+    .service-box:hover{
+      transform:translateY(-12px);
+      border-color:#ff8800;
+    }
+
+    .service-box img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:0.6s;
+      opacity:0.45;
+    }
+
+    .service-box:hover img{
+      transform:scale(1.1);
+      opacity:0.2;
+    }
+
+    .service-content{
+      position:absolute;
+      inset:0;
+      padding:40px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      z-index:2;
+    }
+
+    .service-number{
+      position:absolute;
+      top:25px;
+      right:30px;
+      font-size:5rem;
+      font-weight:800;
+      color:rgba(255,136,0,0.15);
+    }
+
+    .service-content h3{
+      font-size:2rem;
+      color:#ff8800;
+      margin-bottom:20px;
+    }
+
+    .service-content p{
+      color:#ddd;
+      line-height:1.8;
+      margin-bottom:20px;
+    }
+
+    .service-list{
+      list-style:none;
+    }
+
+    .service-list li{
+      margin-bottom:10px;
+      color:#cfcfcf;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .service-list li::before{
+      content:'●';
+      color:#ff8800;
+    }
+
+    .extra-section{
+      padding:120px 8%;
+      background:#111;
+    }
+
+    .extra-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:35px;
+    }
+
+    .extra-card{
+      background:#1b1b1b;
+      padding:40px;
+      border-radius:22px;
+      text-align:center;
+      transition:0.4s;
+      border:1px solid rgba(255,136,0,0.1);
+    }
+
+    .extra-card:hover{
+      transform:translateY(-10px);
+      border-color:#ff8800;
+      box-shadow:0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .extra-card h3{
+      color:#ff8800;
+      margin-bottom:20px;
+      font-size:1.8rem;
+    }
+
+    .extra-card p{
+      color:#cfcfcf;
+      line-height:1.8;
+    }
+
+    .cta-section{
+      padding:120px 8%;
+      text-align:center;
+      position:relative;
+    }
+
+    .cta-box{
+      background:linear-gradient(135deg,#ff8800,#ff6a00);
+      padding:80px 50px;
+      border-radius:35px;
+      color:black;
+      max-width:1100px;
+      margin:auto;
+      box-shadow:0 20px 60px rgba(255,136,0,0.2);
+    }
+
+    .cta-box h2{
+      font-size:3rem;
+      margin-bottom:20px;
+      font-weight:800;
+    }
+
+    .cta-box p{
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+      margin-bottom:35px;
+      font-weight:500;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:16px 35px;
+      background:black;
+      color:white;
+      text-decoration:none;
+      border-radius:12px;
+      font-weight:700;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      background:#111;
+    }
+
+    footer{
+      background:#050505;
+      text-align:center;
+      padding:35px;
+      color:#888;
+    }
+
+    @media(max-width:900px){
+
+      .hero h1{
+        font-size:3rem;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .service-box{
+        height:auto;
+        min-height:500px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+
+  <nav>
+    <div class="logo">Aannemersbedrijf Schepers</div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="diensten.html">Diensten</a>
+      <a href="about.html">Over Ons</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>Onze <span>Diensten</span></h1>
+
+    <p>
+      Van complete nieuwbouwprojecten tot professionele renovaties en maatwerk houtbewerking.
+      Wij leveren kwaliteit, vakmanschap en duurzame oplossingen voor iedere klant.
+    </p>
+  </div>
+
+</header>
+
+<section class="services-section" id="diensten">
+
+  <div class="section-title">
+    <h2>Wat Wij Doen</h2>
+
+    <p>
+      Wij bieden complete bouwoplossingen voor particulieren en bedrijven.
+      Professioneel uitgevoerd met oog voor detail.
+    </p>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service-box">
+
+      <img src="foto03.jpeg " alt="Verbouw">
+
+      <div class="service-content">
+
+        <div class="service-number">01</div>
+
+        <h3>Verbouw</h3>
+
+        <p>
+          Complete renovaties en verbouwingen van woningen en bedrijfspanden.
+        </p>
+
+        <ul class="service-list">
+          <li>woonkamer</li>
+          <li>Keuken verbouwingen</li>
+          <li>Uitbouwen & aanbouwen</li>
+          <li>Complete woning renovatie</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="service-box">
+
+      <img src="foto04.jpeg" alt="Nieuwbouw">
+
+      <div class="service-content">
+
+        <div class="service-number">02</div>
+
+        <h3>Nieuwbouw</h3>
+
+        <p>
+          Moderne nieuwbouwprojecten met hoogwaardige afwerking en duurzame materialen.
+        </p>
+
+        <ul class="service-list">
+          <li>Woningen bouwen</li>
+          <li>boederij & stallen </li>
+          <li>Fundering & constructie</li>
+          <li>Volledige projectbegeleiding</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="service-box">
+
+      <img src="foto6.jpeg" alt="Houtbewerking">
+
+      <div class="service-content">
+
+        <div class="service-number">03</div>
+
+        <h3>Houtbewerking</h3>
+
+        <p>
+          Maatwerk houtoplossingen met professioneel vakmanschap.
+        </p>
+
+        <ul class="service-list">
+          <li>Overkappingen</li>
+          <li>Kozijnen & deuren</li>
+          <li>Maatwerk meubels</li>
+          <li>Interieur afwerking</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="extra-section" id="extra">
+
+  <div class="section-title">
+    <h2>Waarom Ons?</h2>
+
+    <p>
+      Wij combineren kwaliteit, ervaring en betrouwbaarheid in ieder project.
+    </p>
+  </div>
+
+  <div class="extra-container">
+
+    <div class="extra-card">
+      <h3>Kwaliteit</h3>
+      <p>
+        Wij werken uitsluitend met hoogwaardige materialen en professionele afwerking. en we werken samen als broers.
+        
+      </p>
+    </div>
+
+    <div class="extra-card">
+      <h3>Vakmanschap</h3>
+      <p>
+        Ons team beschikt over jarenlange ervaring in bouw en houtbewerking. en we doen het met de hand.
+        inclusief onze vader die af en toe ook helpt met de bouw. 
+      </p>
+    </div>
+
+    <div class="extra-card">
+      <h3>Betrouwbaarheid</h3>
+      <p>
+        Duidelijke communicatie en afspraken die nagekomen worden. Wij staan voor onze klanten en projecten klaar.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="cta-section" id="contact">
+
+  <div class="cta-box">
+
+    <h2>Klaar Voor Uw Project?</h2>
+
+    <p>
+      Neem vandaag nog contact met ons op voor een vrijblijvende offerte
+      of een persoonlijk gesprek over uw bouwproject.
+    </p>
+
+    <a href="#" class="btn">Contact Opnemen</a>
+
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 Aannemersbedrijf schepers </p>
+</footer>
+
+<script>
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+
+    const nav = document.querySelector('nav');
+
+    if(window.scrollY > 50){
+      nav.style.background = 'rgba(0,0,0,0.9)';
+      nav.style.backdropFilter = 'blur(10px)';
+    }
+    else{
+      nav.style.background = 'transparent';
+      nav.style.backdropFilter = 'blur(0px)';
+    }
+
+  });
+
+  // Scroll animations
+  const elements = document.querySelectorAll('.service-box, .extra-card, .cta-box');
+
+  const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+      if(entry.isIntersecting){
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0px)';
+      }
+
+    });
+
+  }, { threshold:0.2 });
+
+  elements.forEach(el => {
+
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(60px)';
+    el.style.transition = 'all 0.8s ease';
+
+    observer.observe(el);
+
+  });
+
+</script>
+
+</body>
+</html>

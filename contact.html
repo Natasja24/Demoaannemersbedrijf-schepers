@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Aannemersbedrijf Schepers</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Outfit', sans-serif;
+}
+
+body{
+  background:#000;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:25px 8%;
+  background:#111;
+  border-bottom:1px solid rgba(255,140,0,0.15);
+}
+
+.logo{
+  font-size:1.8rem;
+  font-weight:700;
+  color:#f5a623;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+}
+
+nav ul li a{
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+  transition:0.3s;
+}
+
+nav ul li a:hover{
+  color:#f5a623;
+}
+
+/* HERO SECTION */
+
+.container{
+  min-height:85vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:80px 8%;
+  position:relative;
+}
+
+.contact-box{
+  max-width:850px;
+  width:100%;
+  background:#111;
+  border:1px solid rgba(245,166,35,0.15);
+  border-radius:30px;
+  padding:70px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* Glow effect */
+
+.contact-box::before{
+  content:'';
+  position:absolute;
+  width:400px;
+  height:400px;
+  background:radial-gradient(circle, rgba(245,166,35,0.18), transparent 70%);
+  top:-150px;
+  right:-150px;
+}
+
+/* TEXT */
+
+.contact-box h1{
+  font-size:4rem;
+  color:#f5a623;
+  margin-bottom:25px;
+  position:relative;
+  z-index:2;
+  opacity:0;
+  animation:fadeUp 1s forwards;
+}
+
+.contact-box p{
+  color:#d6d6d6;
+  font-size:1.15rem;
+  line-height:1.9;
+  margin-bottom:40px;
+  position:relative;
+  z-index:2;
+  opacity:0;
+  animation:fadeUp 1s forwards;
+  animation-delay:0.3s;
+}
+
+/* EMAIL BUTTON */
+
+.mail-link{
+  display:inline-block;
+  padding:18px 35px;
+  border:2px solid #f5a623;
+  border-radius:12px;
+  color:#f5a623;
+  text-decoration:none;
+  font-size:1.2rem;
+  font-weight:700;
+  transition:0.4s;
+  position:relative;
+  z-index:2;
+  opacity:0;
+  animation:fadeUp 1s forwards;
+  animation-delay:0.6s;
+}
+
+.mail-link:hover{
+  background:#f5a623;
+  color:black;
+  transform:translateY(-5px);
+  box-shadow:0 10px 30px rgba(245,166,35,0.3);
+}
+
+/* FOOTER */
+
+footer{
+  background:#0a0a0a;
+  padding:30px;
+  text-align:center;
+  color:#777;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+  0%{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+  nav{
+    flex-direction:column;
+    gap:20px;
+  }
+
+  nav ul{
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+  }
+
+  .contact-box{
+    padding:50px 30px;
+  }
+
+  .contact-box h1{
+    font-size:2.5rem;
+  }
+
+  .contact-box p{
+    font-size:1rem;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+  <div class="logo">
+    Aannemersbedrijf Schepers
+  </div>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="over ons.html">Over Ons</a></li>
+    <li><a href="diensten.html">Diensten</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+</nav>
+
+<!-- CONTENT -->
+
+<section class="container">
+
+  <div class="contact-box">
+
+    <h1>Demo Website Informatie</h1>
+
+    <p>
+    
+Deze website is ontworpen en ontwikkeld door ByNatasjaNova als voorbeeld/demo voor vrienden en toekomstige klanten.
+De website laat zien hoe een professionele online omgeving eruit kan zien, maar is momenteel nog een demo en nog niet officieel actief in gebruik voor een bedrijf of organisatie.
+Belangrijk
+Gegevens, contactinformatie en extra functies worden pas officieel toegevoegd na bevestiging en betaling.
+Aanpassingen, uitbreidingen en extra onderdelen voor de website zijn mogelijk, maar worden eerst besproken en betaald voordat deze online geplaatst worden.
+Het e-mailadres op deze website is alleen bedoeld voor vragen over de website of webdesigndiensten.
+Wat mogelijk is
+<br>
+✔ Persoonlijke gegevens toevoegen
+✔ Bedrijfsinformatie plaatsen
+✔ Extra pagina’s en functies bouwen
+✔ Design aanpassen naar wens
+✔ Volledige officiële oplevering
+<br>
+🚧 Tot die tijd blijft deze website een demo/showcase van het ontwerp en de mogelijkheden.
+    </p>
+
+    <a href="worknatasja@hotmail.com" class="mail-link">
+      worknatasja@hotmail.com
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  © 2026 Aannemersbedrijf Schepers — Alle rechten voorbehouden.
+</footer>
+
+<script>
+
+// Pulse animation mail button
+
+const mailLink = document.querySelector('.mail-link');
+
+setInterval(() => {
+
+  mailLink.style.transform = 'scale(1.05)';
+
+  setTimeout(() => {
+    mailLink.style.transform = 'scale(1)';
+  }, 500);
+
+}, 3000);
+
+// Navbar scroll effect
+
+window.addEventListener('scroll', () => {
+
+  const nav = document.querySelector('nav');
+
+  if(window.scrollY > 20){
+    nav.style.background = '#0d0d0d';
+  } else {
+    nav.style.background = '#111';
+  }
+
+});
+
+</script>
+
+</body>
+</html>
